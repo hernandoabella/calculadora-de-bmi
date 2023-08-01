@@ -111,6 +111,8 @@ input[type=number]:focus {
   background-color: var(--vigo-color);
   text-transform: uppercase;
   cursor: pointer;
+  border-radius: 12px;
+  font-weight: bold;
 }
 
 .flex {
