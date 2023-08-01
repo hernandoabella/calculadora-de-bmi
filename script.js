@@ -15,15 +15,16 @@ heightSlider.oninput = function () {
 }
 
 function showValWeight(newVal) {
-  weightSlider.value=newVal;
+  weightSlider.value = newVal;
 };
 
 function showValHeight(newVal) {
-  heightSlider.value=newVal;
+  heightSlider.value = newVal;
 };
 
 weightSlider.addEventListener("input", updateValueWeight);
 heightSlider.addEventListener("input", updateValueHeight);
+
 function updateValueWeight(e) {
   weightOutput.value = e.srcElement.value;
 }
@@ -33,21 +34,14 @@ function updateValueHeight(e) {
 
 function calculateBmi() {
   var weight = document.bmiForm.realweight.value;
-  var height = (document.bmiForm.realheight.value)/100;
-  var realbmi = (weight)/Math.pow(height, 2);
+  var height = (document.bmiForm.realheight.value) / 100;
+  var realbmi = (weight) / Math.pow(height, 2);
   var realbmiOutput = document.getElementById("yourbmi");
   var messageOutput = document.getElementById("evaluationMessage");
   var roundedBmi = realbmi.toFixed(1);
-  messageOutput.innerHTML = ""; 
-  realbmiOutput.innerHTML = " " + roundedBmi; 
+  realbmiOutput.innerHTML = " " + roundedBmi;
 
   if (roundedBmi > 26) {
     messageOutput.innerHTML = "¡¡¡ERES UN CULO GORDO!!!";
-  } else {
-    
   }
-
-  console.log('Teža: ' + weight + " kg");
-  console.log('Višina: ' + height + " m");
-  console.log('BMI: ' + realbmi);
 }
