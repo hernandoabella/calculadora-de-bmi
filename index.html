@@ -1,58 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de BMI 🏋️‍♂️</title>
   <link rel="stylesheet" href="./styles.css">
-  <link
-      rel="stylesheet"
-      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-light.css"
-    />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-light.css" />
 </head>
+
 <body>
-  <form name="bmiForm">
-    <div class="bmi-calculator">
-      <div class="bmi-calculator-weight">
-        <input class="weight-slider" name="realweight" id="myWeight" type="range" min="25" max="180" value="60"/>
-        <p>
-          Peso: 
-          <input name="Teža" id="inputWeight" type="number" value="60" min="25" max="180" step="1" oninput="showValWeight(this.value)"/>
-          <span id="weight"></span> kg
-        </p>
+  <div class="container">
+    <form name="bmiForm">
+      <div class="flex">
+        <div class="bmi-calculator-weight">
+          <input class="weight-slider" name="realweight" id="myWeight" type="range" min="25" max="180" value="60" />
+          <p>
+            Peso:
+            <input name="peso" id="inputWeight" type="number" value="60" min="25" max="180" step="1"
+              oninput="showValWeight(this.value)" />
+            <span id="weight"></span> kg
+          </p>
+        </div>
+        <div class="bmi-calculator-height">
+          <input class="height-slider" name="realheight" id="myHeight" type="range" min="100" max="220" step="1"
+            value="160">
+          <p style="margin-top: 1.8em;">
+            Alto:
+            <input name="altura" id="inputHeight" type="number" value="160" min="100" max="220" step="1"
+              oninput="showValHeight(this.value)" />
+            <span id="height"></span> cm
+          </p>
+        </div>
       </div>
-      <div class="bmi-calculator-height">
-        <input class="height-slider" name="realheight" id="myHeight" type="range" min="100" max="220" step="1" value="160">
-        <p style="margin-top: 1.8em;">
-          Alto:
-          <input name="Višina" id="inputHeight" type="number" value="160" min="100" max="220" step="1" oninput="showValHeight(this.value)"/>
-          <span id="height"></span> cm
-        </p>
-      </div>
-      <input class="gumb" type="button" value="Calculate" onclick="calculateBmi()">
-     <p>
-       <strong>Your BMI:</strong>
-       <span id="yourbmi" style="font-size: 1.2em;margin-left: 8px;"></span>
-     </p>
-     <p></p>
-     <p>
-       <span id="evaluationMessage"></span>
-     </p>
-    </div>
+      <input class="calculateBtn" type="button" value="Calculate" onclick="calculateBmi()">
+      <p>
+        <strong>Tu BMI es:</strong>
+        <span id="yourbmi"></span>
+      </p>
+      <p></p>
+      <p>
+        <span id="evaluationMessage"></span>
+      </p>
+
     </form>
-    <script src="./script.js"></script>
+  </div>
+  <script src="./script.js"></script>
 </body>
+
 </html>
