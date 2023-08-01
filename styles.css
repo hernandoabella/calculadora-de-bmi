@@ -89,11 +89,11 @@ input[type=number] {
 }
 
 .bmi-calculator-weight {
-  padding: 20px 0px;
+  padding: 20px;
 }
 
 .bmi-calculator-height {
-  
+  padding: 20px;
 }
 
 .weight-slider {
