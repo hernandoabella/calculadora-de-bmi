@@ -9,18 +9,19 @@ heightOutput.innerHTML = heightSlider.value;
 
 weightSlider.oninput = function () {
   weightOutput.innerHTML = this.value;
-}
+};
+
 heightSlider.oninput = function () {
   heightOutput.innerHTML = this.value;
-}
+};
 
 function showValWeight(newVal) {
   weightSlider.value = newVal;
-};
+}
 
 function showValHeight(newVal) {
   heightSlider.value = newVal;
-};
+}
 
 weightSlider.addEventListener("input", updateValueWeight);
 heightSlider.addEventListener("input", updateValueHeight);
@@ -28,14 +29,16 @@ heightSlider.addEventListener("input", updateValueHeight);
 function updateValueWeight(e) {
   weightOutput.value = e.srcElement.value;
 }
+
 function updateValueHeight(e) {
   heightOutput.value = e.srcElement.value;
 }
 
-function calculateBmi() {
+function calculateBmi(event) {
+  event.preventDefault(); // Evita que la página se refresque al hacer clic en el botón.
   var weight = document.bmiForm.realweight.value;
   var height = (document.bmiForm.realheight.value) / 100;
-  var realbmi = (weight) / Math.pow(height, 2);
+  var realbmi = weight / Math.pow(height, 2);
   var realbmiOutput = document.getElementById("yourbmi");
   var messageOutput = document.getElementById("evaluationMessage");
   var roundedBmi = realbmi.toFixed(1);
@@ -43,5 +46,7 @@ function calculateBmi() {
 
   if (roundedBmi > 26) {
     messageOutput.innerHTML = "¡¡¡ERES UN CULO GORDO!!!";
+  } else {
+    messageOutput.innerHTML = "Tu peso es saludable.";
   }
 }
