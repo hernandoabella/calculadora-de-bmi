@@ -32,7 +32,7 @@
             <input name="peso" id="inputWeight" type="number" value="60" min="25" max="180" step="1"
               oninput="showValWeight(this.value)" />
             <span id="weight"></span>
-            <div>kg</div> 
+            <div>KG</div>
           </div>
         </div>
         <div class="bmi-calculator-height">
@@ -42,13 +42,14 @@
             <div>Alto:</div>
             <input name="altura" id="inputHeight" type="number" value="160" min="100" max="220" step="1"
               oninput="showValHeight(this.value)" />
-            <span id="height"></span> 
-            <div>cm</div>
+            <span id="height"></span>
+            <div>CM</div>
           </div>
         </div>
       </div>
-      <button class="calculateBtn" onclick="calculateBmi()"><i class="fa-solid fa-calculator"></i> Calcular BMI</button>
-
+      <button class="calculateBtn" onclick="ageCalculate()">
+        <span><i class="fa-solid fa-calculator"></i> Calcular BMI</span>
+      </button>
     </form>
   </div>
   <script src="./script.js"></script>
