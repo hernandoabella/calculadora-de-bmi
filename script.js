@@ -1,48 +1,29 @@
-var weightSlider = document.getElementById("myWeight");
-var weightOutput = document.getElementById("inputWeight");
+const weightSlider = document.getElementById("myWeight");
+const weightOutput = document.getElementById("inputWeight");
 
-var heightSlider = document.getElementById("myHeight");
-var heightOutput = document.getElementById("inputHeight");
+const heightSlider = document.getElementById("myHeight");
+const heightOutput = document.getElementById("inputHeight");
 
-weightOutput.innerHTML = weightSlider.value;
-heightOutput.innerHTML = heightSlider.value;
+weightOutput.value = weightSlider.value;
+heightOutput.value = heightSlider.value;
 
 weightSlider.oninput = function () {
-  weightOutput.innerHTML = this.value;
+  weightOutput.value = this.value;
 };
 
 heightSlider.oninput = function () {
-  heightOutput.innerHTML = this.value;
+  heightOutput.value = this.value;
 };
 
-function showValWeight(newVal) {
-  weightSlider.value = newVal;
-}
-
-function showValHeight(newVal) {
-  heightSlider.value = newVal;
-}
-
-weightSlider.addEventListener("input", updateValueWeight);
-heightSlider.addEventListener("input", updateValueHeight);
-
-function updateValueWeight(e) {
-  weightOutput.value = e.srcElement.value;
-}
-
-function updateValueHeight(e) {
-  heightOutput.value = e.srcElement.value;
-}
-
 function calculateBmi(event) {
-  event.preventDefault(); // Evita que la página se refresque al hacer clic en el botón.
-  var weight = document.bmiForm.realweight.value;
-  var height = (document.bmiForm.realheight.value) / 100;
-  var realbmi = weight / Math.pow(height, 2);
-  var realbmiOutput = document.getElementById("yourbmi");
-  var messageOutput = document.getElementById("evaluationMessage");
-  var roundedBmi = realbmi.toFixed(1);
-  realbmiOutput.innerHTML = " " + roundedBmi;
+  event.preventDefault();
+  const weight = document.bmiForm.realweight.value;
+  const height = (document.bmiForm.realheight.value) / 100;
+  const realbmi = weight / Math.pow(height, 2);
+  const realbmiOutput = document.getElementById("yourbmi");
+  const messageOutput = document.getElementById("evaluationMessage");
+  const roundedBmi = realbmi.toFixed(1);
+  realbmiOutput.innerHTML = roundedBmi;
 
   if (roundedBmi > 26) {
     messageOutput.innerHTML = "¡¡¡ERES UN CULO GORDO!!!";
