@@ -89,11 +89,11 @@ input[type=number] {
 }
 
 .bmi-calculator-weight {
-  padding: 20px;
+  
 }
 
 .bmi-calculator-height {
-  padding: 20px;
+  
 }
 
 .weight-slider {
@@ -116,6 +116,7 @@ input[type=number] {
   color: #fff;
   overflow: hidden;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .calculateBtn span {
@@ -162,4 +163,12 @@ input[type=number] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.alto, .peso {
+  margin: 10px 0px;
+}
+
+.kg, .cm {
+  margin: 10px 0px;
 }
