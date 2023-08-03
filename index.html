@@ -16,7 +16,7 @@
 <body>
   <div class="container">
     <form name="bmiForm">
-      <p><b>Tu BMI es:</b><span id="yourbmi"></span></p>
+      <p class="textoResultado"><b>Tu Índice de Masa Corporal es: </b><span id="yourbmi">23.4</span></p>
       <div class="flex">
         <div class="bmi-calculator-weight">
           <input class="weight-slider" name="realweight" id="myWeight" type="range" min="25" max="180" value="60" />
@@ -41,7 +41,7 @@
         </div>
       </div>
       <button class="calculateBtn" onclick="calculateBmi(event)">
-        <span><i class="fa-solid fa-calculator"></i> Calcular BMI</span>
+        <span><i class="fa-solid fa-calculator"></i> Calcular IMC</span>
       </button>
     </form>
   </div>
