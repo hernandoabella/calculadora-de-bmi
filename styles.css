@@ -1,180 +1,39 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
-
-:root {
-  --background-color: #f6f6f6;
-  --vigo-color: #f09831;
-  --slider-color: #A3A3A3;
-  --input-number-color: #EBEBEB;
-}
-
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #85FFBD;
-  background-image: linear-gradient(90deg, #85FFBD 0%, #FFFB7D 100%);
-
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
 }
 
 .container {
+  background-color: #fff;
   padding: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 12px;
-  background-color: white;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-
-.weight-slider,
-.height-slider {
-  width: 100%;
-  height: 1px;
-  border-radius: 10px;
-  background: var(--slider-color);
-  outline: none;
-}
-
-input[type=range] {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  cursor: pointer;
-}
-
-input[type=range]:focus {
-  outline: none;
-}
-
-input[type=range]::-ms-track {
-  width: 100%;
-  cursor: pointer;
-}
-
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  border: 2.5px solid var(--vigo-color);
-  height: 20px;
-  width: 20px;
-  border-radius: 40px;
-  background: white;
-  cursor: pointer;
-  margin-top: 0px;
-}
-
-input[type=range]::-moz-range-thumb {
-  border: 2.5px solid var(--vigo-color);
-  height: 20px;
-  width: 20px;
-  border-radius: 40px;
-  background: white;
-  cursor: pointer;
-}
-
-input[type=range]::-ms-thumb {
-  border: 2.5px solid var(--vigo-color);
-  height: 20px;
-  width: 20px;
-  border-radius: 40px;
-  background: white;
-  cursor: pointer;
-}
-
-input[type=number] {
-  background: var(--input-number-color);
-  border: none;
-  font-size: 1.5em;
-  padding: 10px;
   border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.bmi-calculator-weight {
-  margin-right: 10px;
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.bmi-calculator-height {
-  margin-left: 10px;
-}
-
-.weight-slider {
-  margin: 10px 0px;
-}
-
-.height-slider {
-  margin: 10px 0px;
-}
-
-.calculateBtn {
-  position: relative;
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: 0.05em;
-  border-radius: 0.8em;
-  border: none;
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
+button {
+  background-color: #007BFF;
   color: #fff;
-  overflow: hidden;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
-  width: 100%;
 }
 
-.calculateBtn span {
-  position: relative;
-  z-index: 10;
-  transition: color 0.4s;
-  display: inline-flex;
-  align-items: center;
-  padding: 0.8em 1.2em 0.8em 1.05em;
-}
-
-.calculateBtn::before,
-.calculateBtn::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.calculateBtn::before {
-  content: "";
-  background: #000;
-  width: 120%;
-  left: -10%;
-  transform: skew(30deg);
-  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
-}
-
-.calculateBtn:hover::before {
-  transform: translate3d(100%, 0, 0);
-}
-
-.calculateBtn:active {
-  transform: scale(0.95);
-}
-
-.calculateBtn i {
-  margin-right: 10px;
-}
-
-.flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.alto, .peso {
-  margin: 10px 0px;
-}
-
-.kg, .cm {
-  margin: 10px 0px;
-}
-
-.textoResultado {
-  font-size: 1.1em;
+#result {
+  font-size: 24px;
+  margin-top: 20px;
 }
