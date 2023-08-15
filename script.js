@@ -10,3 +10,15 @@ document.getElementById("calculate").addEventListener("click", function() {
       alert("Please enter valid weight and height values.");
   }
 });
+
+// Update weight value as the range is adjusted
+document.getElementById("weight").addEventListener("input", function() {
+  const weightValue = document.getElementById("weightValue");
+  weightValue.textContent = `${this.value} kg`;
+});
+
+// Update height value as the range is adjusted
+document.getElementById("height").addEventListener("input", function() {
+  const heightValue = document.getElementById("heightValue");
+  heightValue.textContent = `${this.value} cm`;
+});
