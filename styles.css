@@ -1,15 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
 
-:root {
-  --background-color: #f6f6f6;
-  --vigo-color: #f09831;
-  --slider-color: #a3a3a3;
-  --input-number-color: #ebebeb;
-}
-
 body {
   font-family: "Roboto", sans-serif;
-  background-image: linear-gradient( 135deg, #3C8CE7 10%, #00EAFF 100%);
+  background-image: linear-gradient(135deg, #3c8ce7 10%, #00eaff 100%);
 }
 
 .container {
@@ -21,61 +14,8 @@ body {
   border-radius: 12px;
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  border: 2.5px solid var(--vigo-color);
-  height: 20px;
-  width: 20px;
-  border-radius: 40px;
-  background: white;
-  cursor: pointer;
-  margin-top: 0px;
-}
-
-input[type="range"]::-moz-range-thumb {
-  border: 2.5px solid var(--vigo-color);
-  height: 20px;
-  width: 20px;
-  border-radius: 40px;
-  background: white;
-  cursor: pointer;
-}
-
-input[type="range"]::-ms-thumb {
-  border: 2.5px solid var(--vigo-color);
-  height: 20px;
-  width: 20px;
-  border-radius: 40px;
-  background: white;
-  cursor: pointer;
-}
-
-input[type="number"] {
-  background: var(--input-number-color);
-  border: none;
-  font-size: 1.5em;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.bmi-calculator-weight {
-  margin-right: 10px;
-}
-
-.bmi-calculator-height {
-  margin-left: 10px;
-}
-
-.weight-slider {
-  margin: 10px 0px;
-}
-
-.height-slider {
-  margin: 10px 0px;
+  display: flex;
+  gap: 5px;
 }
 
 .calculateBtn {
@@ -90,7 +30,6 @@ input[type="number"] {
   color: #fff;
   overflow: hidden;
   cursor: pointer;
-  margin-top: 10px;
   width: 100%;
 }
 
