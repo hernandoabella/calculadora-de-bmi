@@ -1,33 +1,12 @@
-const weightSlider = document.getElementById("myWeight");
-const weightOutput = document.getElementById("inputWeight");
+document.getElementById("calculate").addEventListener("click", function() {
+  const weight = parseFloat(document.getElementById("weight").value);
+  const height = parseFloat(document.getElementById("height").value) / 100; // Convert to meters
 
-const heightSlider = document.getElementById("myHeight");
-const heightOutput = document.getElementById("inputHeight");
-
-weightOutput.value = weightSlider.value;
-heightOutput.value = heightSlider.value;
-
-weightSlider.oninput = function () {
-  weightOutput.value = this.value;
-};
-
-heightSlider.oninput = function () {
-  heightOutput.value = this.value;
-};
-
-function calculateBmi(event) {
-  event.preventDefault();
-  const weight = document.bmiForm.realweight.value;
-  const height = (document.bmiForm.realheight.value) / 100;
-  const realbmi = weight / Math.pow(height, 2);
-  const realbmiOutput = document.getElementById("yourbmi");
-  const messageOutput = document.getElementById("evaluationMessage");
-  const roundedBmi = realbmi.toFixed(1);
-  realbmiOutput.innerHTML = roundedBmi;
-
-  if (roundedBmi > 26) {
-    messageOutput.innerHTML = "¡¡¡ERES UN CULO GORDO!!!";
+  if (!isNaN(weight) && !isNaN(height) && height > 0) {
+      const bmi = weight / (height * height);
+      const result = document.getElementById("result");
+      result.textContent = `Your BMI is ${bmi.toFixed(2)}`;
   } else {
-    messageOutput.innerHTML = "Tu peso es saludable.";
+      alert("Please enter valid weight and height values.");
   }
-}
+});
