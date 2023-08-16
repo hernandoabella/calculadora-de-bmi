@@ -1,24 +1,30 @@
-document.getElementById("calculate").addEventListener("click", function() {
-  const weight = parseFloat(document.getElementById("weight").value);
-  const height = parseFloat(document.getElementById("height").value) / 100; // Convert to meters
+const weightSlider = document.getElementById("myWeight");
+const weightOutput = document.getElementById("inputWeight");
 
-  if (!isNaN(weight) && !isNaN(height) && height > 0) {
-      const bmi = weight / (height * height);
-      const result = document.getElementById("result");
-      result.textContent = `Your BMI is ${bmi.toFixed(2)}`;
+const heightSlider = document.getElementById("myHeight");
+const heightOutput = document.getElementById("inputHeight");
+
+weightSlider.oninput = function () {
+  weightOutput.textContent = this.value;
+};
+
+heightSlider.oninput = function () {
+  heightOutput.textContent = this.value;
+};
+
+function calculateBmi(event) {
+  event.preventDefault();
+  const weight = document.bmiForm.realweight.value;
+  const height = (document.bmiForm.realheight.value) / 100;
+  const realbmi = weight / Math.pow(height, 2);
+  const realbmiOutput = document.getElementById("yourbmi");
+  const messageOutput = document.getElementById("evaluationMessage");
+  const roundedBmi = realbmi.toFixed(1);
+  realbmiOutput.innerHTML = roundedBmi;
+
+  if (roundedBmi > 26) {
+    messageOutput.innerHTML = "¡¡¡ERES UN CULO GORDO!!!";
   } else {
-      alert("Please enter valid weight and height values.");
+    messageOutput.innerHTML = "Tu peso es saludable.";
   }
-});
-
-// Update weight value as the range is adjusted
-document.getElementById("weight").addEventListener("input", function() {
-  const weightValue = document.getElementById("weightValue");
-  weightValue.textContent = `${this.value} kg`;
-});
-
-// Update height value as the range is adjusted
-document.getElementById("height").addEventListener("input", function() {
-  const heightValue = document.getElementById("heightValue");
-  heightValue.textContent = `${this.value} cm`;
-});
+}
